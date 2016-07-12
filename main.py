@@ -33,10 +33,14 @@ class pop(Widget):
         self.main_pop = Popup(title="QUIT GAME ?",content=self.box,
         	size_hint=(.8,.5),auto_dismiss=False,title_size=25)
         	
-        self.but.bind(on_press=self.main_pop.dismiss)
+        self.but.bind(on_release=self.main_pop.dismiss)
+        self.but2.bind(on_release=self.quit_popup)
         self.main_pop.open()
         
 
+    @staticmethod
+    def quit_popup(self):
+        exit()
 
 
 
